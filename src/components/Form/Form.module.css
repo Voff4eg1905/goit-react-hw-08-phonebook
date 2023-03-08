@@ -1,0 +1,27 @@
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    display: block;
+    margin: 10px auto;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: 2px solid blue;
+}
+.submitButton {
+    font-size: 26px;
+    background-color: #fff;
+    border-radius: 10px;
+    color: blue;
+    border: 2px solid blue;
+}
+
+.submitButton:hover {
+    color: white;
+    background-color: blue;
+}
