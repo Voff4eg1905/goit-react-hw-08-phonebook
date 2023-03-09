@@ -4,7 +4,7 @@ import css from 'components/Form/Form.module.css';
 class Form extends Component {
   state = {
     name: '',
-    number: ''
+    number: '',
   };
 
   handleChange = event => {
@@ -45,7 +45,9 @@ class Form extends Component {
             className={css.input}
           />
         </label>
-        <button type="submit" className={css.submitButton}>Add contact</button>
+        <button type="submit" className={css.submitButton}>
+          Add contact
+        </button>
       </form>
     );
   }
