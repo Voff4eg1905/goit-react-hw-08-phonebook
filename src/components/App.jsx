@@ -17,6 +17,7 @@ export default function App() {
 
   useEffect(() => {
     window.localStorage.setItem('phonebook', JSON.stringify(contacts));
+    console.log(contacts);
   }, [contacts]);
 
   const onFormSubmit = ({ name, number }) => {
