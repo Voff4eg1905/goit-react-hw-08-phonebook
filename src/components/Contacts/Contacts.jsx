@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux/es/exports';
+import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contactsSlice';
 import { getContactsList, getFilter } from 'redux/selectors';
 import { useSelector } from 'react-redux/';
