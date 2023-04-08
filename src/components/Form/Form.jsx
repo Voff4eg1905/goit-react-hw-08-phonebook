@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { addContacts } from 'redux/operations';
+import { addContact } from 'redux/operations';
 import { useDispatch } from 'react-redux';
 import { selectContactsList } from 'redux/selectors';
 import { useSelector } from 'react-redux';
@@ -42,7 +42,7 @@ export default function Form() {
     );
     contactExists
       ? alert(`${name} is already in your contact list`)
-      : dispatch(addContacts(contact));
+      : dispatch(addContact(contact));
   };
 
   return (
