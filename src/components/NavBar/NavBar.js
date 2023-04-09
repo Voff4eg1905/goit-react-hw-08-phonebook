@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoggedIn, selectUser } from 'redux/auth/selectors';
 import { logOut } from 'redux/auth/operations';
+import UserMenu from 'components/UserMenu/UserMenu';
 
 const NavBar = () => {
   const isRegistered = useSelector(selectIsLoggedIn);
@@ -43,10 +44,11 @@ const NavBar = () => {
       ) : (
         <>
           <p>Welcome {getUser.name}</p>
-
+          <UserMenu />
+          {/* <p>{getUser.email}</p>
           <NavLink to="/logout">
             <button onClick={() => dispatch(logOut())}>Log out</button>
-          </NavLink>
+          </NavLink> */}
         </>
       )}
     </header>
