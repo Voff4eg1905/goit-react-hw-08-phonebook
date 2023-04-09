@@ -1,18 +1,18 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logIn } from 'redux/auth/operations';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 const styles = {
   form: {
-    width: 320,
-  },
-  label: {
+    width: 480,
     display: 'flex',
     flexDirection: 'column',
-    marginBottom: 15,
   },
 };
+
 const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -41,33 +41,35 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
+    <>
       <h1>Please log in to your Phonebook</h1>
 
       <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Email
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
+        <TextField
+          id="outlined-basic"
+          label="Email"
+          variant="outlined"
+          margin="normal"
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleChange}
+        />
+        <TextField
+          id="outlined-basic"
+          label="Password"
+          variant="outlined"
+          type="password"
+          name="password"
+          value={password}
+          onChange={handleChange}
+        />
 
-        <label style={styles.label}>
-          Password
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
-
-        <button type="submit">Log in</button>
+        <Button variant="contained" type="submit" sx={{ marginTop: 3 }}>
+          Log in
+        </Button>
       </form>
-    </div>
+    </>
   );
 };
 

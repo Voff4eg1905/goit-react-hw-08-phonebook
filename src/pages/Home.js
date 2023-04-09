@@ -1,4 +1,7 @@
 import React from 'react';
+import Diversity1Icon from '@mui/icons-material/Diversity1';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
+import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 
 const Home = () => {
   return (
@@ -14,8 +17,11 @@ const Home = () => {
       }}
     >
       <h1>Welcome to your Phone book</h1>
+      <Diversity1Icon />
       <p> Add or remove friends </p>
+      <Diversity3Icon />
       <p> Never loose important contacts </p>
+      <ImportContactsIcon />
       <p> Always at your disposal</p>
     </div>
   );

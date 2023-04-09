@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { register } from 'redux/auth/operations';
 import { useDispatch } from 'react-redux';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 const styles = {
   form: {
     width: 480,
-  },
-  label: {
     display: 'flex',
     flexDirection: 'column',
-    marginBottom: 30,
   },
 };
 
@@ -46,32 +45,40 @@ const RegisterPage = () => {
       <h1>Please register your profile</h1>
 
       <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Name
-          <input type="text" name="name" value={name} onChange={handleChange} />
-        </label>
+        <TextField
+          id="outlined-basic"
+          label="Name"
+          variant="outlined"
+          type="text"
+          name="name"
+          value={name}
+          onChange={handleChange}
+        />
 
-        <label style={styles.label}>
-          Email
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
+        <TextField
+          id="outlined-basic"
+          label="Email"
+          variant="outlined"
+          margin="normal"
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleChange}
+        />
 
-        <label style={styles.label}>
-          Password
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
+        <TextField
+          id="outlined-basic"
+          label="Password"
+          variant="outlined"
+          type="password"
+          name="password"
+          value={password}
+          onChange={handleChange}
+        />
 
-        <button type="submit">Register me!</button>
+        <Button variant="contained" type="submit" sx={{ marginTop: 3 }}>
+          Register me!
+        </Button>
       </form>
     </>
   );

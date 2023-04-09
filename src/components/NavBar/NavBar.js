@@ -1,14 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import Button from '@mui/material/Button';
+import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
+import HomeIcon from '@mui/icons-material/Home';
+import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
+import ContactEmergencyIcon from '@mui/icons-material/ContactEmergency';
 import { selectIsLoggedIn, selectUser } from 'redux/auth/selectors';
-import { logOut } from 'redux/auth/operations';
 import UserMenu from 'components/UserMenu/UserMenu';
 
 const NavBar = () => {
   const isRegistered = useSelector(selectIsLoggedIn);
   const getUser = useSelector(selectUser);
-  const dispatch = useDispatch();
 
   const styles = {
     header: {
@@ -16,39 +19,48 @@ const NavBar = () => {
       top: 0,
       display: 'flex',
       width: '100%',
-      justifyContent: 'space-between',
+      justifyContent: 'space-around',
       alignItems: 'center',
       borderBottom: '1px solid #2A363B',
+      padding: '20px',
+    },
+    welcome: {
+      fontSize: '26px',
+      margin: 0,
     },
   };
   return (
     <header style={styles.header}>
       {!isRegistered ? (
         <NavLink to="/">
-          <button>Home</button>
+          <Button variant="contained">
+            Home <HomeIcon sx={{ marginLeft: 1 }} />
+          </Button>
         </NavLink>
       ) : (
         <NavLink to="/contacts">
-          <button>Contacts</button>
+          <Button variant="contained">
+            Contacts <ContactEmergencyIcon sx={{ marginLeft: 1 }} />
+          </Button>
         </NavLink>
       )}
       {!isRegistered ? (
         <div>
           <NavLink to="/login">
-            <button>Log In</button>
+            <Button variant="contained">
+              Log In <PermContactCalendarIcon sx={{ marginLeft: 1 }} />
+            </Button>
           </NavLink>
           <NavLink to="/register">
-            <button>Register</button>
+            <Button variant="contained" sx={{ marginLeft: 1 }}>
+              Register <PersonAddAltIcon sx={{ marginLeft: 1 }} />
+            </Button>
           </NavLink>
         </div>
       ) : (
         <>
-          <p>Welcome {getUser.name}</p>
+          <p style={styles.welcome}>Welcome {getUser.name}</p>
           <UserMenu />
-          {/* <p>{getUser.email}</p>
-          <NavLink to="/logout">
-            <button onClick={() => dispatch(logOut())}>Log out</button>
-          </NavLink> */}
         </>
       )}
     </header>

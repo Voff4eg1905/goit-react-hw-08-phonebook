@@ -1,19 +1,19 @@
 .form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .input {
-    display: block;
-    margin: 10px auto;
-    border-radius: 5px;
-    font-size: 16px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 input:focus {
-    outline: 2px solid blue;
+  outline: 2px solid blue;
 }
-.submitButton {
+/* .submitButton {
     font-size: 26px;
     background-color: #fff;
     border-radius: 10px;
@@ -24,4 +24,4 @@ input:focus {
 .submitButton:hover {
     color: white;
     background-color: blue;
-}
+} */
