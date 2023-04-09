@@ -33,7 +33,7 @@ export default function Form() {
   };
 
   const onSubmit = ({ name, number }) => {
-    const contact = { id: nanoid(), name, phone: number };
+    const contact = { name, number: number };
 
     const contactExists = contactsList.find(
       contact =>
